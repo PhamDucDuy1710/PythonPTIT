@@ -13,7 +13,7 @@ def solve(s):
     for i in range(len(s)):
         x = int(s[i])
         tong += x
-        if (i + 1) % 2 == 1:      
+        if (i) % 2 == 1:      
             if x % 2 == 0:
                 return "NO"
         else:                     

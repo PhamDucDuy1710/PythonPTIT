@@ -1,14 +1,23 @@
 import math
+from array import array
 
-sum = 0
-for t in range(int(input())):
+N = 2000000
+
+nt = array('i', range(N + 1))
+
+for i in range(2, int(math.sqrt(N)) + 1):
+    if nt[i] == i:
+        for j in range(i * i, N + 1, i):
+            if nt[j] == j:
+                nt[j] = i
+
+total = 0
+
+for _ in range(int(input())):
     n = int(input())
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0:
-            while n % i == 0:
-                sum += i
-                n /= i
-    
-    if n != 1: sum += n
 
-print(int(sum))
+    while n != 1:
+        total += nt[n]
+        n //= nt[n]
+
+print(total)

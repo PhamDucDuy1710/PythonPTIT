@@ -3,7 +3,7 @@ import math
 for t in range(int(input())):
     n = int(input())
     a = list(map(int, input().split()))
-    cnt = [0] * 1001
+    cnt = [0] * 1000001
     for i in a:
         cnt[i] += 1
 
